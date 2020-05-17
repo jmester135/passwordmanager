@@ -23,7 +23,7 @@
 	$encrypted = $encrypted . ':' . $iv;
 	openssl_decrypt($encryptedData, 'aes-256-cbc', $encryptionKey, 0, 	$initializationVector);
 
-
+	echo"test123";
 
 
 ?>
