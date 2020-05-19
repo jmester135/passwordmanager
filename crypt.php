@@ -6,7 +6,7 @@ function key()
   //Key wird immer der selbe genutzt. er wird in einer extra php gespeichert und mit Getter geholt
   //$encryption_key = openssl_random_pseudo_bytes(32);
   $encryption_key = 'test123';
-  return $encryption_key
+  return $encryption_key;
 }
 
 function crypt($password)
