@@ -1,5 +1,5 @@
 <?php
-global define('AES_256_CBC', 'aes-256-cbc');
+define ('AES_256_CBC', 'aes-256-cbc');
 
 function key()
 {
@@ -8,8 +8,6 @@ function key()
   $encryption_key = 'test123';
   return $encryption_key
 }
-
-
 
 function crypt($password)
 {
