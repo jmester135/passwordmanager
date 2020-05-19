@@ -22,12 +22,12 @@ public function connect()
   mysqli_set_charset($dbconnect, "utf8");
 }
  //schliesst die verbindung zur Datenbank
-function close_DBConnection($dbconnect){
+public function close_DBConnection($dbconnect){
   mysqli_close($dbconnect);
 }
   // $sql = SQL Statment
  //führt ein sql update befehl aus
-function SQL_Update($sql,$dbconnect){
+public function SQL_Update($sql,$dbconnect){
   $result = false;
   if($dbconnect != null && $sql != null){
     $result = mysqli_query($sql, $dbh) or die("SQL Update fehlgeschlagen" . $sql);
@@ -35,7 +35,7 @@ function SQL_Update($sql,$dbconnect){
   return $result;
 }
 //führt ein sql delete befehl aus
-function SQL_Delete($sql,$dbconnect){
+public function SQL_Delete($sql,$dbconnect){
   $result = false;
   if($dbconnect != null && $sql != null){
     $result = mysqli_query($sql, $dbh) or die("SQL Delete fehlgeschlagen" . $sql);
@@ -43,7 +43,7 @@ function SQL_Delete($sql,$dbconnect){
   return $result;
 }
  //führt ein sql insert befehl aus
-function SQL_Insert($sql,$dbconnect){
+public function SQL_Insert($sql,$dbconnect){
   $result = false;
   if($dbconnect != null && $sql != null){
     $result = mysqli_query($sql, $dbh) or die("SQL Insert fehlgeschlagen" . $sql);
@@ -51,7 +51,7 @@ function SQL_Insert($sql,$dbconnect){
   return $result;
 }
 
-function Resultset_From_SQL_Select($sql,$dbconnect){
+public function Resultset_From_SQL_Select($sql,$dbconnect){
   $result = false;
   if($dbconnect != null && $sql != null){
     $result = mysqli_query($sql, $dbh) or die("Query zur Datenbank mit MYSQLI fehlgeschlagen ". $sql ." Error: " . mysqli_errno($dbh) . " : " . mysqli_error($dbh) );
@@ -59,7 +59,7 @@ function Resultset_From_SQL_Select($sql,$dbconnect){
   return $result;
 }
 
-function Row_From_Resultset($result){
+public function Row_From_Resultset($result){
   $row = Null;
   if ($result) {
     $row = msqli_fetch_row($result);
