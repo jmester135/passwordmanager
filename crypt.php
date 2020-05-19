@@ -1,6 +1,7 @@
 <?php
 define ('AES_256_CBC', 'aes-256-cbc');
 
+/*
 function key()
 {
   //Key wird immer der selbe genutzt. er wird in einer extra php gespeichert und mit Getter geholt
@@ -8,13 +9,13 @@ function key()
   $encryption_key = 'test123';
   return $encryption_key;
 }
-
+*/
 function crypt($password)
 {
     //Vorbereitung der Verschlüsselung
 		$iv = openssl_random_pseudo_bytes(openssl_cipher_iv_length(AES_256_CBC));
     //Key holen
-    $encryption_key = key();
+    $encryption_key = 'test123';
     //Verschlüsselung
 		$encrypted = openssl_encrypt($password, AES_256_CBC, $encryption_key, 0, $iv);
 
@@ -24,7 +25,7 @@ function crypt($password)
 function decrypt($password)
 {
     //Key holen
-    $encryption_key = key();
+    $encryption_key = 'test123';
     //Entschlüsselung
   	$encrypted = $encrypted . ':' . $iv;
     $parts = explode(':',$encrypted);
